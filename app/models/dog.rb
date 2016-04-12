@@ -18,7 +18,7 @@ class Dog < ActiveRecord::Base
   end
 
   def age
-    Time.now.year - birthday.year
+    Time.now.yday >= birthday.yday ? Time.now.year - birthday.year : Time.now.year - birthday.year - 1
   end
 
   def location
